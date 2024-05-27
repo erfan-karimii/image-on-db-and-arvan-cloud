@@ -1,0 +1,13 @@
+{% load static %}
+<h1>test</h1>
+{% for p in products %}
+    {{p.id}}
+{{p.name}} <br>
+{% comment %} {{p.price}} <br> {% endcomment %}
+{{ p.main_image|length }}<br>
+<img src="data:image/jpeg;base64,{{ p.get_main_image }}" alt="Uploaded Image"> <br>
+<img src="{{ p.other_image.url }}" alt="Uploaded Image"> <br>
+<hr>
+{% endfor %}
+
+<link rel="stylesheet"  href="{% static 'style.css' %}">
